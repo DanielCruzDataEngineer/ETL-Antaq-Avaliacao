@@ -26,21 +26,23 @@ Além disso, a estrutura de banco de dados SQL oferece a capacidade de garantir 
 Em resumo, para as tabelas , a escolha de um banco de dados SQL proporcionaria eficiência na consulta e na análise de dados estruturados e relacionados, atendendo aos requisitos de armazenamento e consulta no Data Lake de forma adequada.
 
 
-Avaliação ETL
+Projeto:
 
+Aqui o fluxo de organizaão do projeto a ser desenvolvido.
+Para rodar todo o fluxo do código. Rode ` python src/ ` em seu terminal.
 Organização do Projeto
 ------------
 
     ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
+    ├── Makefile           <- Makefile com alguns comandos, somente para exemplificar uma esteira de CD do ETL. 
+    ├── README.md          <- Documentação do projeto
     │
     │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
+    ├── requirements.txt   <- Requerimentos para pip
+    │                         
     │
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
+    ├── src                <- Listado os códigos do ETL
+    │   ├── __init__.py    <- Arquivo __init__.py
     │   │
     │   ├── extractors        
     │   │   └── make_dataset.py <- Código para extrair dados da Antaq
@@ -52,15 +54,17 @@ Organização do Projeto
     │   ├── transform     
     │   │   └──  etl_antaq.py    <- Código para transformação dos dados   
     │   │    
-    │   │── main.py <- Código que roda todo o fluxo
+    │   │── main.py <- Código que roda todo o fluxo ---> Rode python src/ para executá-lo
     │   │
     │   └── results  
     │   |    └── consulta_sql.py <- Código que faz a consulta SQL no SQL SERVER via Spark e retorna os dados em formato de Excel.
     |   |
     |   └── querys <- Traz os códigos de consultas sqls utilizados.
-    |         └── creation_atracacao_fato.txt <- Retorna a criação da tabela atracaco_fato
-    |         └── creation_carga_fato.txt <- Retorna a criação da tabela carga_fato
-    |         └── select_resultado_antaq.txt <- Retorna a criação da tabela com os resultados requeridos pelos economistas
+    |         └── creation_atracacao_fato.sql <- Retorna a criação da tabela atracaco_fato
+    |         └── creation_carga_fato.sql <- Retorna a criação da tabela carga_fato
+    |         └── select_resultado_antaq.sql <- Retorna a criação da tabela com os resultados requeridos pelos economistas
+    |         └── select_view_antaq.sql <- Criação de view para query sql Spark
+    |         └── select_resultado_antaq.sql <- Criação de resultado para query sql Spark, gera também os resultados requeridos pelos economistas.
     |
     │── documentation <- Traz documentação sobre colunas das tabelas, metadados. 
     |   
@@ -72,4 +76,9 @@ Organização do Projeto
 
 
 --------
+Aqui o resultado final em imagem, também está disponibilizado em Excel no arquivo ReportAntaq.xlsx na pasta Antaq_report
+![Alt text](report.png)
 
+
+Também disponibilizei um desenho de arquitetura da solução na Azure, utilizando airflow. 
+![Alt text](https://lucid.app/publicSegments/view/c610b657-5ed0-4a1a-84ca-c7a80f47fd49/image.png)

@@ -5,77 +5,34 @@ def spark_read_from_sql(spark):
         Args:
             spark: Variável de Spark Session, Configurado no arquivo main.py .
     """
-    query = """WITH AtracacoesNordesteCeara AS (
-    SELECT
-        YEAR([Data Atracação]) AS Ano,
-        MONTH([Data Atracação]) AS Mês,
-        COUNT(*) AS NumeroAtracacoes,
-        AVG(CAST(REPLACE(TEsperaAtracacao, ',', '.') AS DECIMAL)) AS MediaTempoEspera,
-        AVG(CAST(REPLACE(TAtracado, ',', '.') AS DECIMAL)) AS MediaTempoAtracado,
-        SGUF
-    FROM atracacao_fato_fato  
-    WHERE
-        YEAR([Data Atracação]) IN (2020, 2021, 2022, 2023)
-    GROUP BY
-        YEAR([Data Atracação]),
-        MONTH([Data Atracação]),
-        SGUF
-)
-
-SELECT * FROM (   
-SELECT
-    Ano,
-    Mês,
-    'Brasil' as Localidade,
-    SUM(NumeroAtracacoes) AS NumeroAtracacoes,
-    (SUM(NumeroAtracacoes) - LAG(SUM(NumeroAtracacoes), 12) OVER (ORDER BY Ano, Mês)) AS VariacaoNumeroAtracacoes,
-    AVG(MediaTempoEspera) AS MediaTempoEspera,
-    AVG(MediaTempoAtracado) AS MediaTempoAtracado
-FROM
-    AtracacoesNordesteCeara
-GROUP BY Ano, Mês 
-
-UNION ALL
-    
-SELECT
-    Ano,
-    Mês,
-    'Nordeste' as Localidade,
-    SUM(NumeroAtracacoes) AS NumeroAtracacoes,
-    (SUM(NumeroAtracacoes) - LAG(SUM(NumeroAtracacoes), 12) OVER (ORDER BY Ano, Mês)) AS VariacaoNumeroAtracacoes,
-    AVG(MediaTempoEspera) AS MediaTempoEspera,
-    AVG(MediaTempoAtracado) AS MediaTempoAtracado
-FROM
-    AtracacoesNordesteCeara
-WHERE SGUF IN ('CE', 'RN', 'PB', 'PE', 'AL', 'SE', 'BA', 'MA')
-GROUP BY Ano, Mês
-   UNION ALL 
-       SELECT
-        Ano,
-        Mês,
-        'Ceará' as Localidade,
-        NumeroAtracacoes,
-        NumeroAtracacoes - LAG(NumeroAtracacoes, 12) OVER (ORDER BY Ano, Mês) AS VariacaoNumeroAtracacoes,
-        MediaTempoEspera,
-        MediaTempoAtracado
-    FROM
-        AtracacoesNordesteCeara
-        WHERE SGUF = 'CE' ) as A
-        WHERE A.Ano IN ('2021','2023')""" 
+    # Query para ler atracacao_fato e gerar uma spark sql view
+    with open('src/querys/select_view_antaq.sql','r',encoding='utf-8') as f:
+        query_view = f.read()
 
     dados_spark = spark.read \
     .format("jdbc") \
     .option("url", "jdbc:sqlserver://localhost:1433;databaseName=master") \
-    .option("dbtable", f"({query}) AS consulta") \
-    .option("user", "DataUser") \
-    .option("password", "userdata") \
+    .option("dbtable", f"({query_view}) AS consulta") \
+    .option("user", "user") \
+    .option("password", "password") \
+    .option("numPartitions", 10) \
     .load()
 
+    dados_spark.createOrReplaceTempView("AtracacoesNordesteCeara")
+
+    # Query para ler a view gerada pelo spark sql e gerar o resultado em Excel para os economistas  # noqa E501
+    with open('src/querys/select_result_antaq.sql','r',encoding='utf-8') as f:
+        query = f.read()
+
+    # Leitura da view
+    dados_spark = spark.sql(query)
+
+    # Escrevendo dados em Excel
     dados_spark.write \
     .format("com.crealytics.spark.excel") \
     .option("dataAddress", "'Report - Análise Antaq'!A1") \
-    .option("useHeader", "true") \
+    .option("Header", "true") \
     .mode("overwrite") \
-    .save("ReportAntaq.xlsx")
+    .save("Antaq_report/ReportAntaq.xlsx")
 
     return dados_spark

@@ -2,7 +2,7 @@ from datetime import datetime
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.dummy import DummyOperator
-
+from airflow.operators.email_operator import EmailOperator
 # Define os argumentos padrão da DAG
 default_args = {
     'owner': 'seu_nome',
@@ -16,8 +16,8 @@ dag = DAG(
     'antaq_etl_dag',
     default_args=default_args,
     description='ETL para processamento de dados da Antaq',
-    schedule_interval=None,  # Defina a frequência de execução da DAG conforme necessário
-    catchup=False,  # Impede a execução retroativa de tarefas
+    schedule_interval=None,  
+    catchup=False,  
 )
 
 # Define uma tarefa Dummy como ponto de partida
@@ -26,25 +26,36 @@ start_task = DummyOperator(
     dag=dag,
 )
 
+def check_data_completeness():
+    # Coloque aqui a lógica para verificar a completude dos dados
+    if 'dados_incompletos':
+        email = EmailOperator(
+            task_id='send_email_incomplete_data',
+            to='destinatario@example.com',
+            subject='Dados Incompletos - Antaq ETL',
+            html_content='Os dados não estão completos. Por favor, verifique o processo ETL.',
+            dag=dag,
+        )
+
 # Define tarefas Python para cada etapa do fluxo
 def extract():
-    # Coloque aqui a lógica para extrair dados da Antaq
+    
     pass
 
 def load_to_lake():
-    # Coloque aqui a lógica para carregar dados no DataLake
+   
     pass
 
 def load_to_sql():
-    # Coloque aqui a lógica para carregar dados no banco de dados SQL
+    
     pass
 
 def transform():
-    # Coloque aqui a lógica para transformar os dados
+    
     pass
 
 def query_sql_server():
-    # Coloque aqui a lógica para consultar o SQL Server via Spark e gerar um arquivo Excel
+    
     pass
 
 # Define as tarefas Python usando PythonOperator
@@ -78,5 +89,11 @@ query_sql_server_task = PythonOperator(
     dag=dag,
 )
 
+check_data_completeness_task = PythonOperator(
+    task_id='check_data_completeness_task',
+    python_callable=check_data_completeness,
+    dag=dag,
+)
+
 # Define as dependências entre as tarefas
-start_task >> extract_task >> [load_to_lake_task, load_to_sql_task] >> transform_task >> query_sql_server_task
+start_task >> extract_task >> [load_to_lake_task, load_to_sql_task] >> transform_task >> query_sql_server_task >> check_data_completeness_task
