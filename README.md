@@ -8,6 +8,7 @@ Respondendo a primeira pergunta
 • 3, 4 ,5 - conhece a técnica e tem pouca experiência;
 • 6 - domina a técnica e já desenvolveu vários projetos utilizando-a.
 Tópicos de Conhecimento:
+
 • Manipulação e tratamento de dados com Python: 6 
 
 • Manipulação e tratamento de dados com Pyspark: 6 
