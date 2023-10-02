@@ -41,7 +41,7 @@ Em resumo, para as tabelas , a escolha de um banco de dados SQL proporcionaria e
 Projeto:
 
 
-Aqui o fluxo de organizaão do projeto a ser desenvolvido.
+Aqui o fluxo de organização do projeto a ser desenvolvido.
 Para rodar todo o fluxo do código. Rode ` python src/ ` em seu terminal.
 
 Organização do Projeto
