@@ -1,20 +1,24 @@
 ETL-Antaq
 ==============================
 Respondendo a primeira pergunta
+--------
 
 1- Qual o seu nível de domínio nas técnicas/ferramentas listadas abaixo, onde:
 • 0, 1, 2 - não tem conhecimento e experiência;
 • 3, 4 ,5 - conhece a técnica e tem pouca experiência;
 • 6 - domina a técnica e já desenvolveu vários projetos utilizando-a.
 Tópicos de Conhecimento:
-• Manipulação e tratamento de dados com Python: 6
-• Manipulação e tratamento de dados com Pyspark: 6
-• Desenvolvimento de data workflows em Ambiente Azure com databricks: 5
-• Desenvolvimento de data workflows com Airflow: 5
-• Manipulação de bases de dados NoSQL: 6
-• Web crawling e web scraping para mineração de dados: 6
-• Construção de APIs: REST, SOAP e Microservices:  5
+• Manipulação e tratamento de dados com Python: 6 \n
+• Manipulação e tratamento de dados com Pyspark: 6 \n
+• Desenvolvimento de data workflows em Ambiente Azure com databricks: 5 \n
+• Desenvolvimento de data workflows com Airflow: 5 \n
+• Manipulação de bases de dados NoSQL: 6 \n
+• Web crawling e web scraping para mineração de dados: 6 \n
+• Construção de APIs: REST, SOAP e Microservices:  5 \n
 
+--------
+
+--------
 Respondendo a segunda,
 2 - 
 Para as tabelas, minha orientação seria armazená-las em uma estrutura de banco de dados SQL no Data Lake. Isso se deve à natureza altamente estruturada e relacionada dessas tabelas, que contêm informações detalhadas sobre atracações de embarcações e movimentações de cargas em portos.
@@ -25,11 +29,15 @@ Além disso, a estrutura de banco de dados SQL oferece a capacidade de garantir 
 
 Em resumo, para as tabelas , a escolha de um banco de dados SQL proporcionaria eficiência na consulta e na análise de dados estruturados e relacionados, atendendo aos requisitos de armazenamento e consulta no Data Lake de forma adequada.
 
+--------
+
 
 Projeto:
 
+
 Aqui o fluxo de organizaão do projeto a ser desenvolvido.
 Para rodar todo o fluxo do código. Rode ` python src/ ` em seu terminal.
+
 Organização do Projeto
 ------------
 
