@@ -3,7 +3,7 @@
 
 # Comando padrão ao executar apenas `make`
 all: install data load transform query
-
+fluxo : python src/
 # Instalação de requisitos
 install:
     pip install -r requirements.txt
