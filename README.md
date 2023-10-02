@@ -8,13 +8,19 @@ Respondendo a primeira pergunta
 • 3, 4 ,5 - conhece a técnica e tem pouca experiência;
 • 6 - domina a técnica e já desenvolveu vários projetos utilizando-a.
 Tópicos de Conhecimento:
-• Manipulação e tratamento de dados com Python: 6 \n
-• Manipulação e tratamento de dados com Pyspark: 6 \n
-• Desenvolvimento de data workflows em Ambiente Azure com databricks: 5 \n
-• Desenvolvimento de data workflows com Airflow: 5 \n
-• Manipulação de bases de dados NoSQL: 6 \n
-• Web crawling e web scraping para mineração de dados: 6 \n
-• Construção de APIs: REST, SOAP e Microservices:  5 \n
+• Manipulação e tratamento de dados com Python: 6 
+
+• Manipulação e tratamento de dados com Pyspark: 6 
+
+• Desenvolvimento de data workflows em Ambiente Azure com databricks: 5 
+
+• Desenvolvimento de data workflows com Airflow: 5 
+
+• Manipulação de bases de dados NoSQL: 6 
+
+• Web crawling e web scraping para mineração de dados: 6 
+
+• Construção de APIs: REST, SOAP e Microservices:  5 
 
 --------
 
