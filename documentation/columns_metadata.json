@@ -1,0 +1,286 @@
+{
+    "Atracacao_fato": [
+      {
+        "Atributo": "IDAtracacao",
+        "Descrição": "Código de identificação da atracação."
+      },
+      {
+        "Atributo": "CDTUP",
+        "Descrição": "Código de identificação do porto informante (Porto Público: Bigrama+Trigrama; Porto Privado: Código da Antaq - BR+UF+xxx), disponível para consulta na página: web.antaq.gov.br/portalv3/sdpv2servicosonline/ConsultarPorto.aspx."
+      },
+      {
+        "Atributo": "IDBerco",
+        "Descrição": "Código de identificação do berço do porto informante."
+      },
+      {
+        "Atributo": "Berço",
+        "Descrição": "Nome do berço do porto informante. Local da atracação (berço) do porto informante, cadastrado previamente na base da Antaq. Códigos de berços disponíveis para consulta na página: web.antaq.gov.br/portalv3/sdpv2servicosonline/ConsultarBerco.aspx"
+      },
+      {
+        "Atributo": "Porto Atracação",
+        "Descrição": "Nome do porto informante."
+      },
+      {
+        "Atributo": "Apelido Instalação Portuária",
+        "Descrição": "Apelido do porto informante."
+      },
+      {
+        "Atributo": "Complexo Portuário",
+        "Descrição": "Complexo Portuário do porto informante."
+      },
+      {
+        "Atributo": "Tipo da Autoridade Portuária",
+        "Descrição": "Tipo de autoridade portuária do porto informante, que pode ser Porto Público ou Porto Privado."
+      },
+      {
+        "Atributo": "Data Atracação",
+        "Descrição": "Data e hora de atracação da embarcação no porto (yyyy-MM-dd hh:mm:ss)."
+      },
+      {
+        "Atributo": "Data Chegada",
+        "Descrição": "Data e hora de chegada da embarcação no porto (yyyy-MM-dd hh:mm:ss)."
+      },
+      {
+        "Atributo": "Data Desatracação",
+        "Descrição": "Data e hora de desatracação da embarcação no porto (yyyy-MM-dd hh:mm:ss)."
+      },
+      {
+        "Atributo": "Data Início Operação",
+        "Descrição": "Data e hora de início da Operação (yyyy-MM-dd hh:mm:ss)."
+      },
+      {
+        "Atributo": "Data Término Operação",
+        "Descrição": "Data e hora de término da operação (yyyy-MM-dd hh:mm:ss)."
+      },
+      {
+        "Atributo": "Tipo de Operação",
+        "Descrição": "Tipo de operação (finalidade) da atracação: Movimentação da Carga (1), Passageiro (2), Apoio (3), Marinha (4), Abastecimento (5), Reparo/Manutenção (6), Misto (7) ou Retirada de Resíduos (8)."
+      },
+      {
+        "Atributo": "Tipo de Navegação da Atracação",
+        "Descrição": "Tipo de navegação da embarcação: Navegação Interior (1), Apoio Portuário (2), Cabotagem (3), Apoio Marítimo (4) ou Longo Curso (5)."
+      },
+      {
+        "Atributo": "Nacionalidade do Armador",
+        "Descrição": "Nacionalidade Armador: Brasileira (1) e Estrangeira (2)."
+      },
+      {
+        "Atributo": "FlagMCOperacaoAtracacao",
+        "Descrição": "Se for igual a 1, identifica que a atracação é contabilizada como movimentação de carga."
+      },
+      {
+        "Atributo": "Terminal",
+        "Descrição": "Se o tipo de autoridade portuária do porto informante for Porto Público, será informado o terminal arrendado ou público onde ocorreu a atracação."
+      },
+      {
+        "Atributo": "Município",
+        "Descrição": "Município do porto informante"
+      },
+      {
+        "Atributo": "UF",
+        "Descrição": "Nome da unidade da federação do porto informante"
+      },
+      {
+        "Atributo": "SGUF",
+        "Descrição": "Sigla da unidade da federação do porto informante"
+      },
+      {
+        "Atributo": "Região Geográfica",
+        "Descrição": "Nome da região hidrográfica do porto informante."
+      },
+      {
+        "Atributo": "Nº da Capitania",
+        "Descrição": "Código atribuído pela Capitania dos Portos do Brasil. Utilizado quando a embarcação não possuir número IMO."
+      },
+      {
+        "Atributo": "Nº do IMO",
+        "Descrição": "Número da International Maritime Organization (IMO) atribuído à embarcação."
+      },
+      {
+        "Atributo": "TEsperaAtracacao",
+        "Descrição": "É definido como sendo a diferença entre a data/hora de atracação do navio e a data/hora de chegada do mesmo à área de fundeio. Inclui o tempo de viagem pelo canal de acesso e eventual tempo de espera para atracação do navio."
+      },
+      {
+        "Atributo": "TEsperaInicioOp",
+        "Descrição": "É definido como sendo a diferença entre a data/hora de início de operação do navio e a data/hora de atracação deste. Trata-se do tempo em que o navio, já atracado, espera para que se inicie a operação de carga/descarga."
+      },
+      {
+        "Atributo": "TOperacao",
+        "Descrição": "É definido como sendo a diferença entre a data/hora de término da operação do navio e a data/hora de início dessa operação. Este é o tempo que se usa para calcular a Prancha Média Operacional (PMO)."
+      },
+      {
+        "Atributo": "TEsperaDesatracacao",
+        "Descrição": "É definido como sendo a diferença entre a data/hora de desatracação do navio e a data/hora de término da operação. Trata-se do tempo em que o navio aguarda no berço até a sua desatracação, para iniciar a viagem de saída da instalação portuária."
+      },
+      {
+        "Atributo": "TEstadia",
+        "Descrição": "TE (horas) - É definido como a soma de todos os tempos desde a chegada do navio na área de fundeio até a sua desatracação do berço, ou seja, TE = T1 + T2 + T3 + T4."
+      }
+
+
+    ],
+    "Carga_fato" : [
+        {
+            "Atributo": "IDCarga",
+            "Descrição": "Código de identificação da carga."
+          },
+          {
+            "Atributo": "IDAtracacao",
+            "Descrição": "Código de identificação da atracação. Ligação com a tabela de atracação."
+          },
+          {
+            "Atributo": "Origem",
+            "Descrição": "Código do porto de origem da carga (porto de embarque), disponível para consulta na página: web.antaq.gov.br/portalv3/sdpv2servicosonline/ConsultarPorto.aspx"
+          },
+          {
+            "Atributo": "Destino",
+            "Descrição": "Código do porto de destino da carga (porto de desembarque), disponível para consulta na página: web.antaq.gov.br/portalv3/sdpv2servicosonline/ConsultarPorto.aspx"
+          },
+          {
+            "Atributo": "CDMercadoria",
+            "Descrição": "Classificação Nomenclatura Comum do Mercosul (código NCM SH4) para mercadorias. Contém os quatros primeiros dígitos do código NCM referente a posição do Sistema Harmonizado (SH). Contêineres e semireboques baú devem ser informados neste campo, por meio de códigos próprios. Códigos de mercadoria disponíveis para consulta na página: web.antaq.gov.br/portalv3/sdpv2servicosonline/ConsultarMercadoria.aspx"
+          },
+          {
+            "Atributo": "Tipo Operação da Carga",
+            "Descrição": "Classificação do tipo de operação da carga. Classificado até março de 2018 como: Apoio, Transbordo e Movimentação de Carga. A partir de abril de 2018, classificado de acordo com a Instrução Normativa 800 da Receita Federal, de 27 de dezembro de 2007."
+          },
+          {
+            "Atributo": "Carga Geral Acondicionamento",
+            "Descrição": "Classifica a carga geral como solta ou conteinerizada."
+          },
+          {
+            "Atributo": "ConteinerEstado",
+            "Descrição": "Situação de preenchimento do contêiner, com valores possíveis de cheio(C) ou vazio(V)."
+          },
+          {
+            "Atributo": "Tipo Navegação",
+            "Descrição": "Tipo de navegação da carga, de acordo com os portos de embarque e desembarque: Navegação Interior (1), Apoio Portuário (2), Cabotagem (3), Apoio Marítimo (4) ou Longo Curso (5)."
+          },
+          {
+            "Atributo": "FlagAutorizacao",
+            "Descrição": "Identifica o transporte na navegação interior que utiliza portos públicos e privados autorizados pela Antaq. Dessa forma, podem ser considerados ou não os dados provenientes das administrações hidroviárias e demais fontes de informação, que não estão no Sistema Desempenho Portuário - SDP."
+          },
+          {
+            "Atributo": "FlagCabotagem",
+            "Descrição": "Diferencia os montantes transportados na navegação de cabotagem daqueles movimentados pelos portos. Isto é, por conta de ser uma navegação doméstica, o transporte de cabotagem gera movimentação portuária na origem e no destino da carga, e essa flag evita a dupla contagem para fins de transporte."
+          },
+          {
+            "Atributo": "FlagCabotagemMovimentacao",
+            "Descrição": "Diferencia os montantes movimentados na navegação de cabotagem. Isto é, considera para fins de apuração a movimentação portuária gerada na origem e destino do transporte em navegação de cabotagem."
+          },
+          {
+            "Atributo": "FlagConteinerTamanho",
+            "Descrição": "Categoriza os diversos tamanhos de contêiner em 20', 40' ou outros."
+          },
+          {
+            "Atributo": "FlagLongoCurso",
+            "Descrição": "Identifica o transporte e a movimentação de cargas na navegação de longo curso."
+          },
+          {
+            "Atributo": "FlagMCOperacaoCarga",
+            "Descrição": "Identifica os tipos de operação de carga que serão considerados para fins de apuração de movimentação e transporte."
+          },
+          {
+            "Atributo": "FlagOffshore",
+            "Descrição": "Identifica as cargas oriundas de bacias sedimentares ou plataformas marítimas."
+          },
+          {
+            "Atributo": "FlagTransporteViaInterioir",
+            "Descrição": "Identifica que o transporte ocorreu em via interior."
+          },
+          {
+            "Atributo": "Percurso Transporte em vias Interiores",
+            "Descrição": "Classifica o percurso de transporte realizado exclusivamente em vias interiores. Podendo ser via Interior Internacional, Interior Estadual, Interior Interestadual ou Interior de percurso não identificado."
+          },
+          {
+            "Atributo": "Percurso Transporte Interiores",
+            "Descrição": "Compreende a navegação que utilizou uma via interior no todo ou em parte do percurso de transporte. É classificada em longo curso em vias interiores, cabotagem em vias interiores e navegação interior."
+          },
+          {
+            "Atributo": "STNaturezaCarga",
+            "Descrição": "Identificação que na atracação foi somente movimentada uma única natureza de carga. Utilizado para o cálculo de produtividade por grupo de mercadoria. Pode ser : Exclusivo ou compartilhado"
+          },
+          {
+            "Atributo": "STSH2",
+            "Descrição": "Identificação que na atracação foi somente movimentada um único capitulo. Utilizado para o cálculo de produtividade por grupo de mercadoria. Pode ser : Exclusivo ou compartilhado"
+          },
+          {
+            "Atributo": "STSH4",
+            "Descrição": "Identificação que na atracação foi somente movimentada uma única mercadoria. Utilizado para o cálculo de produtividade por mercadoria. Pode ser : Exclusivo ou compartilhado"
+          },
+          {
+            "Atributo": "Natureza da Carga",
+            "Descrição": "Natureza da carga: Granel Sólido, Granel Líquido, Carga Geral ou Carga Conteinerizada."
+          },
+          {
+            "Atributo": "Sentido",
+            "Descrição": "Sentido da Operação: Desembarque (1) ou Embarque (2)."
+          },
+          {
+            "Atributo": "TEU",
+            "Descrição": "Se natureza da carga for contêiner, quantidade movimentada em TEUs (Twenty-foot Equivalent Unit)."
+          },
+          {
+            "Atributo": "QTCarga",
+            "Descrição": "Quantidade movimentada em unidades, se código carga referente a Contêineres ou Automóveis."
+          },
+          {
+            "Atributo": "VLPesoCargaBruta",
+            "Descrição": "Peso bruto da carga, em toneladas. Para contêineres cheios: peso da tara do contêiner somado ao peso da carga acondicionada, em toneladas."
+          },
+          { 
+          "Atributo": "Peso líquido da carga",
+          "Descrição": "Peso líquido da carga ( Carga não conteinerizada = Peso bruto; Carga conteinerizada = Peso sem contêiner)"
+          },
+          { 
+          "Atributo": "Porto Atracação",
+          "Descrição": "Nome do porto informante."
+          },
+          { 
+          "Atributo": "SGUF",
+          "Descrição": "Sigla da unidade da federação do porto informante"
+          },
+          { 
+          "Atributo": "Ano da data de início da operação da atracação",
+          "Descrição": "Data de início da operação da atracação -  Referência Ano"
+          },
+          { 
+          "Atributo": "Mês da data de início da operação da atracação",
+          "Descrição": "Mês de início da operação da atracação -  Referência Mês"
+          }
+    ],
+
+        "Report_Antaq": [
+          {
+            "Atributo": "Localidade",
+            "Descrição": "Nome da localidade para a qual os dados do relatório estão sendo apresentados (Ceará, Nordeste, Brasil)."
+          },
+          {
+            "Atributo": "Número de Atracações",
+            "Descrição": "Número total de atracações registradas para a localidade no mês e ano específicos."
+          },
+          {
+            "Atributo": "Variação do número de atracação em relação ao mesmo mês do ano anterior",
+            "Descrição": "Diferença entre o número de atracações no mês atual e o número de atracações no mesmo mês do ano anterior."
+          },
+          {
+            "Atributo": "Tempo de espera médio",
+            "Descrição": "Tempo médio de espera para atracação das embarcações na localidade no mês e ano específicos."
+          },
+          {
+            "Atributo": "Tempo atracado médio",
+            "Descrição": "Tempo médio que as embarcações permanecem atracadas na localidade no mês e ano específicos."
+          },
+          {
+            "Atributo": "Mês",
+            "Descrição": "Mês para o qual os dados do relatório estão sendo apresentados (Janeiro, Fevereiro, ..., Dezembro)."
+          },
+          {
+            "Atributo": "Ano",
+            "Descrição": "Ano para o qual os dados do relatório estão sendo apresentados."
+          }
+        ]
+
+      
+  }
+  
